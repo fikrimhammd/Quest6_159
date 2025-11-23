@@ -55,26 +55,25 @@ fun FormSiswa(
         }
     ) {isiRuang ->
         Column(
-            // START PERBAIKAN:
-            // 1. Hapus Alignment.CenterHorizontally.
-            // 2. Tambahkan padding horizontal (misalnya 20.dp) pada Column utama.
+
+
             modifier = Modifier
                 .padding(isiRuang)
                 .fillMaxWidth()
-                .padding(horizontal = 20.dp), // <-- Padding agar tidak menempel di tepi
+                .padding(horizontal = 20.dp),
             verticalArrangement = Arrangement.Top,
-            // Hapus: horizontalAlignment = Alignment.CenterHorizontally
-            // END PERBAIKAN
+
+
         ) {
             OutlinedTextField(
                 value = txtNama,
                 singleLine = true,
                 shape = MaterialTheme.shapes.medium,
-                // START PERBAIKAN: Gunakan fillMaxWidth()
+
                 modifier = Modifier
-                    .fillMaxWidth() // <-- Mengisi lebar yang tersedia (setelah padding)
+                    .fillMaxWidth()
                     .padding(top = 20.dp),
-                // END PERBAIKAN
+
                 label = { Text(text = "Nama Lengkap") },
                 onValueChange = {
                     txtNama = it
@@ -83,16 +82,16 @@ fun FormSiswa(
             HorizontalDivider(
                 modifier = Modifier
                     .padding(vertical = 12.dp)
-                    .fillMaxWidth(), // <-- Mengisi lebar yang tersedia
+                    .fillMaxWidth(),
                 thickness = 1.dp,
-                color = Color.Blue
+                color = Color.White
             )
-            // START PERBAIKAN: Row untuk Radio Button
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 10.dp),
-                horizontalArrangement = Arrangement.Center // <-- Gunakan Start agar merapat ke kiri
+                horizontalArrangement = Arrangement.Center
             ) {
                 pilihanJK.forEach { item ->
                     Row(
@@ -103,7 +102,7 @@ fun FormSiswa(
                                     txtGender = item
                                 }
                             )
-                            .padding(end = 16.dp), // Beri jarak antara Radio Button
+                            .padding(end = 16.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         RadioButton(
@@ -116,10 +115,10 @@ fun FormSiswa(
                     }
                 }
             }
-            // END PERBAIKAN
+
             HorizontalDivider(modifier = Modifier
                 .padding(vertical = 20.dp)
-                .fillMaxWidth(), // <-- Mengisi lebar yang tersedia
+                .fillMaxWidth(),
                 thickness = 1.dp,
                 color = Color.Red
             )
@@ -127,10 +126,10 @@ fun FormSiswa(
                 value = txtAlamat,
                 singleLine = true,
                 shape = MaterialTheme.shapes.medium,
-                // START PERBAIKAN: Gunakan fillMaxWidth()
+
                 modifier = Modifier
-                    .fillMaxWidth(), // <-- Mengisi lebar yang tersedia
-                // END PERBAIKAN
+                    .fillMaxWidth(),
+
                 label = { Text(text = "Alamat Lengkap") },
                 onValueChange = {
                     txtAlamat = it
@@ -140,9 +139,9 @@ fun FormSiswa(
             Spacer(modifier = Modifier.height(20.dp))
 
             Button(
-                // START PERBAIKAN: Gunakan fillMaxWidth()
+
                 modifier = Modifier.fillMaxWidth(),
-                // END PERBAIKAN
+
                 enabled = txtAlamat.isNotEmpty() && txtNama.isNotEmpty() && txtGender.isNotEmpty(),
                 onClick = {
                     val finalData = mutableListOf(txtNama, txtGender, txtAlamat)
