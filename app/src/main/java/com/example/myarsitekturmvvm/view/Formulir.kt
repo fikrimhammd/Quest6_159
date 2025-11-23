@@ -84,7 +84,7 @@ fun FormSiswa(
                     .padding(vertical = 12.dp)
                     .fillMaxWidth(),
                 thickness = 1.dp,
-                color = Color.White
+                color = Color.Blue
             )
 
             Row(
@@ -120,7 +120,7 @@ fun FormSiswa(
                 .padding(vertical = 20.dp)
                 .fillMaxWidth(),
                 thickness = 1.dp,
-                color = Color.Red
+                color = Color.Black
             )
             OutlinedTextField(
                 value = txtAlamat,
