@@ -5,6 +5,6 @@
     <string name="nama_lengkap">NAMA_LENGKAP</string>
     <string name="jenis_kelamin">JENIS_KELAMIN</string>
     <string name="alamat">ALAMAT</string>
-    <string name="tampil">Tampilan Data</string>
-    <string name="home">Form Isian</string>
+    <string name="tampil">Detail Siswa</string>
+    <string name="home">Formulir Siswa</string>
 </resources>
